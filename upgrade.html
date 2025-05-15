@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InvestMate</title>
+  <link rel="stylesheet" href="stock.css" />
+</head>
+<body>
+   <header>
+  <div class="navbar">
+    <div class="navbar-top">
+      <div class="logo-container">
+        <img src="logo .png" alt="InvestMate Logo" class="logo-img">
+        <span class="logo-text">InvestMate</span>
+      </div>
+      <button class="hamburger-menu" aria-label="Toggle menu">☰</button>
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="markets.html" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany" data-country="germany">Germany</a></li>
+            <li><a href="countries.html?country=usa" data-country="usa">United States</a></li>
+            <li><a href="countries.html?country=uk" data-country="uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan" data-country="japan">Japan</a></li>
+            <li><a href="countries.html?country=china" data-country="china">China</a></li>
+            <li><a href="countries.html?country=france" data-country="france">France</a></li>
+            <li><a href="countries.html?country=south_korea" data-country="south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india" data-country="india">India</a></li>
+            <li><a href="countries.html?country=brazil" data-country="brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      <div class="auth-links" id="authLinks">
+        <a href="login.html" class="login" id="loginLink">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+  Upgrade Now
+</button>
+    </nav>
+    
+    </div>
+    <div class="mobile-nav-overlay"></div>
+    <nav class="mobile-nav">
+      <button class="close-menu" aria-label="Close menu">×</button>
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany">Germany</a></li>
+            <li><a href="countries.html?country=usa">United States</a></li>
+            <li><a href="countries.html?country=uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan">Japan</a></li>
+            <li><a href="countries.html?country=china">China</a></li>
+            <li><a href="countries.html?country=france">France</a></li>
+            <li><a href="countries.html?country=south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india">India</a></li>
+            <li><a href="countries.html?country=brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item-mobile" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      
+      <div class="auth-links" id="authLinksMobile">
+        <a href="login.html" class="login">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+  Upgrade Now
+</button>
+    </nav>
+  </div>
+</header>
+
+  <div class="upgrade-container">
+    <div class="header">
+      <h1>Upgrade to InvestMate Pro</h1>
+      <p>Unlock premium features and take your investment strategy to the next level</p>
+    </div>
+    
+    <div class="pricing-cards">
+      <div class="card free">
+        <h2>Free</h2>
+        <div class="price">$0 <span>/ forever</span></div>
+        <ul class="features">
+          <li>Basic market data</li>
+          <li>Limited portfolio tracking</li>
+          <li>Delayed stock prices (15 min)</li>
+          <li>Standard news updates</li>
+          <li>Basic technical indicators</li>
+        </ul>
+        <a href="#" class="btn btn-free">Current Plan</a>
+      </div>
+      
+      <div class="card pro">
+        <div class="pro-badge">RECOMMENDED</div>
+        <h2>Pro</h2>
+        <div class="price">$9.99 <span>/ month</span></div>
+        <ul class="features">
+          <li>Real-time market data</li>
+          <li>Advanced portfolio analytics</li>
+          <li>Instant price alerts</li>
+          <li>Premium research reports</li>
+          <li>Advanced charting tools</li>
+          <li>24/7 priority support</li>
+          <li>Exclusive webinars</li>
+        </ul>
+        <a href="#" class="btn btn-pro">Upgrade Now</a>
+      </div>
+    </div>
+    
+    <div class="why-upgrade">
+      <h2>Why Upgrade to Pro?</h2>
+      <div class="benefits">
+        <div class="benefit">
+          <h3>Real-Time Data</h3>
+          <p>Get instant access to live market prices and never miss an opportunity with our real-time streaming data.</p>
+        </div>
+        <div class="benefit">
+          <h3>Advanced Analytics</h3>
+          <p>Our proprietary algorithms help you spot trends and opportunities before others in the market.</p>
+        </div>
+        <div class="benefit">
+          <h3>Premium Support</h3>
+          <p>24/7 access to our team of investment experts ready to help you with your strategy.</p>
+        </div>
+        <div class="benefit">
+          <h3>Exclusive Content</h3>
+          <p>Weekly market insights from top analysts and exclusive educational webinars.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Hamburger menü toggle
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const closeBtn = document.querySelector('.close-menu');
+  const overlay = document.querySelector('.mobile-nav-overlay');
+
+  // Menüyü aç
+  hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Menüyü kapat
+  function closeMobileMenu() {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Tüm dropdown menüleri kapat
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+
+  // Dropdown işlevselliği
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      const parentLi = this.closest('li.dropdown');
+      const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+      
+      // Eğer bu bir dropdown menüsüyse
+      if (dropdownMenu) {
+        // Dropdown zaten açıksa
+        if (dropdownMenu.style.display === 'block') {
+          // "Markets" yazısına tıklandığında markets.html'e git
+          if (this.getAttribute('href') === '#') {
+            window.location.href = 'markets.html';
+          } else {
+            window.location.href = this.href;
+          }
+          return;
+        }
+        
+        // Açık değilse dropdown'ı aç ve sayfaya gitmeyi engelle
+        e.preventDefault();
+        
+        // Diğer tüm dropdown'ları kapat
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== dropdownMenu) menu.style.display = 'none';
+        });
+        
+        // Bu dropdown'ı aç
+        dropdownMenu.style.display = 'block';
+      }
+    });
+  });
+
+  // Dropdown dışına tıklandığında kapat
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Oturum kontrolü fonksiyonu
+  function updateAuthUI() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+    
+    // Desktop menü güncelleme
+    const authLinks = document.getElementById('authLinks');
+    const portfolioItem = document.getElementById('portfolio-item');
+    const upgradeBtn = document.getElementById('upgradeBtn');
+    const homeLink = document.getElementById('home-link');
+    
+    // Mobil menü güncelleme
+    const authLinksMobile = document.getElementById('authLinksMobile');
+    const portfolioItemMobile = document.getElementById('portfolio-item-mobile');
+    const upgradeBtnMobile = document.querySelector('.mobile-nav .upgrade-btn');
+    const homeLinkMobile = document.querySelector('.mobile-nav .nav-links li:first-child a');
+
+    if (isLoggedIn) {
+      // Desktop menü güncelleme
+      if (authLinks) {
+        authLinks.innerHTML = '<a href="#" id="logoutBtn" class="login">Log out</a>';
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+          e.preventDefault();
+          sessionStorage.removeItem('isLoggedIn');
+          window.location.href = 'login.html';
+        });
+      }
+      
+      if (portfolioItem) portfolioItem.style.display = 'block';
+      if (upgradeBtn) upgradeBtn.style.display = 'block';
+      if (homeLink) homeLink.href = 'user.html';
+
+      // Mobil menü güncelleme
+      if (authLinksMobile) {
+        authLinksMobile.innerHTML = '<a href="#" id="logoutBtnMobile" class="login">Log out</a>';
+        document.getElementById('logoutBtnMobile').addEventListener('click', function(e) {
+          e.preventDefault();
+          sessionStorage.removeItem('isLoggedIn');
+          window.location.href = 'login.html';
+        });
+      }
+      
+      if (portfolioItemMobile) portfolioItemMobile.style.display = 'block';
+      if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'block';
+      if (homeLinkMobile) homeLinkMobile.href = 'user.html';
+      
+    } else {
+      // Desktop menü güncelleme
+      if (authLinks) {
+        authLinks.innerHTML = `
+          <a href="login.html" class="login">Log in</a>
+          <a href="signup.html" class="signup">Sign up</a>
+        `;
+      }
+      
+      if (portfolioItem) portfolioItem.style.display = 'none';
+      if (upgradeBtn) upgradeBtn.style.display = 'none';
+      if (homeLink) homeLink.href = 'stock.html';
+
+      // Mobil menü güncelleme
+      if (authLinksMobile) {
+        authLinksMobile.innerHTML = `
+          <a href="login.html" class="login">Log in</a>
+          <a href="signup.html" class="signup">Sign up</a>
+        `;
+      }
+      
+      if (portfolioItemMobile) portfolioItemMobile.style.display = 'none';
+      if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'none';
+      if (homeLinkMobile) homeLinkMobile.href = 'stock.html';
+    }
+  }
+
+  // Sayfa yüklendiğinde UI'ı güncelle
+  updateAuthUI();
+
+  // Hamburger menü toggle
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const closeBtn = document.querySelector('.close-menu');
+  const overlay = document.querySelector('.mobile-nav-overlay');
+
+  // Menüyü aç
+  hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Mobil menü açıldığında UI'ı tekrar güncelle (güvenlik için)
+    updateAuthUI();
+  });
+
+  // Menüyü kapat
+  function closeMobileMenu() {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Tüm dropdown menüleri kapat
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+
+  // Dropdown işlevselliği (hem desktop hem mobil için)
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      const parentLi = this.closest('li.dropdown');
+      const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+      
+      if (dropdownMenu) {
+        // Dropdown zaten açıksa
+        if (dropdownMenu.style.display === 'block') {
+          // "Markets" yazısına tıklandığında markets.html'e git (sadece desktop için)
+          if (this.getAttribute('href') === 'markets.html') {
+            window.location.href = 'markets.html';
+          }
+          return;
+        }
+        
+        // Açık değilse dropdown'ı aç ve sayfaya gitmeyi engelle
+        e.preventDefault();
+        
+        // Diğer tüm dropdown'ları kapat
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== dropdownMenu) menu.style.display = 'none';
+        });
+        
+        // Bu dropdown'ı aç
+        dropdownMenu.style.display = 'block';
+      }
+    });
+  });
+
+  // Dropdown dışına tıklandığında kapat
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    }
+  });
+});
+</script>
+<script src="js/control.js" defer></script>

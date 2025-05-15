@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f9f9f9;
+    color: #222;
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+  }
+  
+  .logo-text {
+    font-weight: bold;
+    color: #f7931a;
+    font-size: 1.4em;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-links li {
+    list-style: none;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: color 0.3s;
+    padding: 5px 0;
+    position: relative;
+  }
+  
+  .nav-links a:hover {
+    color: #f7931a;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f7931a;
+    transition: width 0.3s;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .auth-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .auth-linkss{
+    display: flex;
+    align-items: center;
+    margin-right: 80px;
+  }
+  
+  .login {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .login:hover {
+    color: #f7931a;
+  }
+  
+  .signup {
+    background-color: #f7931a;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+  
+  .signup:hover {
+    background-color: #e07e0c;
+  }
+  /* Modern Stock Card Styles */
+.market-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 30px auto;
+    max-width: 800px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .market-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Card Header */
+  .card-header {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .stock-icon {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 4px;
+  }
+  
+  .stock-info {
+    flex: 1;
+  }
+  
+  .stock-name {
+    font-size: 24px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 4px;
+    letter-spacing: 0.2px;
+  }
+  
+  .stock-company {
+    font-size: 15px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  /* Price and Change */
+  .card-body {
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .stock-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    letter-spacing: -0.5px;
+  }
+  
+  .stock-change {
+    font-size: 16px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  
+  .stock-change.positive {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
+  }
+  
+  .stock-change.negative {
+    background-color: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+  }
+  
+  /* Timeframe Buttons */
+  .chart-timeframe {
+    display: flex;
+    padding: 16px 24px 0;
+    gap: 8px;
+  }
+  
+  .timeframe-btn {
+    padding: 8px 18px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .timeframe-btn:hover {
+    background: #f8f8f8;
+    color: #444;
+  }
+  
+  .timeframe-btn.active {
+    background: #f7931a;
+    border-color: #f7931a;
+    color: white;
+    box-shadow: 0 2px 6px rgba(247, 147, 26, 0.2);
+  }
+  
+  /* Chart Container */
+  .chart-container {
+    padding: 16px 24px 24px;
+    position: relative;
+  }
+  
+  #msftChart {
+    width: 100% !important;
+    height: 300px !important;
+  }
+  
+  /* News Section */
+  .stock-news {
+    padding: 24px;
+    background: #fafafa;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  .stock-news h3 {
+    font-size: 18px;
+    color: #222;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  
+  .stock-news p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+  }
+  .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-menu a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .market-cardd {
+      margin: 20px 15px;
+      border-radius: 12px;
+    }
+    
+    .card-headerr {
+      padding: 18px;
+    }
+    
+    .chart-container {
+      padding: 12px 16px 16px;
+    }
+    
+    .timeframe-btn {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+  }

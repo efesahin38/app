@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InvestMate</title>
+  <link rel="stylesheet" href="stock.css" />
+</head>
+<body>
+  <header>
+  <div class="navbar">
+    <div class="navbar-top">
+      <div class="logo-container">
+        <img src="logo .png" alt="InvestMate Logo" class="logo-img">
+        <span class="logo-text">InvestMate</span>
+      </div>
+      <button class="hamburger-menu" aria-label="Toggle menu">☰</button>
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="markets.html" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany" data-country="germany">Germany</a></li>
+            <li><a href="countries.html?country=usa" data-country="usa">United States</a></li>
+            <li><a href="countries.html?country=uk" data-country="uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan" data-country="japan">Japan</a></li>
+            <li><a href="countries.html?country=china" data-country="china">China</a></li>
+            <li><a href="countries.html?country=france" data-country="france">France</a></li>
+            <li><a href="countries.html?country=south_korea" data-country="south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india" data-country="india">India</a></li>
+            <li><a href="countries.html?country=brazil" data-country="brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      <div class="auth-links" id="authLinks">
+        <a href="login.html" class="login" id="loginLink">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+  Upgrade Now
+</button>
+    </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+    <nav class="mobile-nav">
+      <button class="close-menu" aria-label="Close menu">×</button>
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany">Germany</a></li>
+            <li><a href="countries.html?country=usa">United States</a></li>
+            <li><a href="countries.html?country=uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan">Japan</a></li>
+            <li><a href="countries.html?country=china">China</a></li>
+            <li><a href="countries.html?country=france">France</a></li>
+            <li><a href="countries.html?country=south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india">India</a></li>
+            <li><a href="countries.html?country=brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item-mobile" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      <div class="auth-links" id="authLinksMobile">
+        <a href="login.html" class="login">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+  Upgrade Now
+</button>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+  Upgrade Now
+</button>
+    <section class="portfolio">
+        <h2>Portfolio value</h2>
+        <div class="value">$29,140.00</div>
+      </section>
+      <section class="wishlist">
+        <h3>Wishlist</h3>
+        <div class="cards">
+          <div class="market-card" data-symbol="MSFT"
+          onclick="window.location.href='msft.html';">
+            <div class="card-header">
+                <img src="" alt="MSFT" class="stock-icon">
+                <div class="stock-info">
+                    <div class="stock-name">MSFT</div>
+                    <div class="stock-company">Microsoft, Inc</div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="stock-price"></div>
+                <div class="stock-change negative"></div>
+            </div>
+        </div>
+        <div class="market-card" data-symbol="NFLX">
+          <div class="card-header">
+              <img src="" alt="NFLX" class="stock-icon">
+              <div class="stock-info">
+                  <div class="stock-name">NFLX</div>
+                  <div class="stock-company">Netflix, Inc</div>
+              </div>
+          </div>
+          <div class="card-body">
+              <div class="stock-price"></div>
+              <div class="stock-change positive"></div>
+          </div>
+      </div>
+          <div class="market-card" data-symbol="WMT">
+              <div class="card-header">
+                  <img src="" alt="META" class="stock-icon">
+                  <div class="stock-info">
+                      <div class="stock-name">Walmart</div>
+                      <div class="stock-company">Walmart, Inc</div>
+                  </div>
+              </div>
+              <div class="card-body">
+                  <div class="stock-price"></div>
+                  <div class="stock-change positive"></div>
+              </div>
+        </div>
+      </section>
+  
+      <div class="stocks-container">
+        <h1 class="stocks-title">Stocks</h1>
+        <div class="market-card" data-symbol="DOW">
+          <div class="card-header">
+              <img src="" alt="DOW" class="stock-icon">
+              <div class="stock-info">
+                  <div class="stock-name">DOW</div>
+                  <div class="stock-company">Dow,Inc</div>
+              </div>
+          </div>
+          <div class="card-body">
+              <div class="stock-price"></div>
+              <div class="stock-change positive"></div>
+          </div>
+      </div>
+        
+      <div class="market-card" data-symbol="NVDA">
+        <div class="card-header">
+            <img src="" alt="NVDA" class="stock-icon">
+            <div class="stock-info">
+                <div class="stock-name">NVDA</div>
+                <div class="stock-company">Nvidia,Inc</div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="stock-price"></div>
+            <div class="stock-change negative"></div>
+        </div>
+    </div>
+        
+        <div class="market-card" data-symbol="AAPL">
+          <div class="card-header">
+              <img src="" alt="AAPL" class="stock-icon">
+              <div class="stock-info">
+                  <div class="stock-name">AAPL</div>
+                  <div class="stock-company">Apple, Inc</div>
+              </div>
+          </div>
+          <div class="card-body">
+              <div class="stock-price"></div>
+              <div class="stock-change positive"></div>
+          </div>
+      </div>
+        
+      <div class="market-card" data-symbol="NFLX">
+        <div class="card-header">
+            <img src="" alt="NFLX" class="stock-icon">
+            <div class="stock-info">
+                <div class="stock-name">NFLX</div>
+                <div class="stock-company">Netflix, Inc</div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="stock-price"></div>
+            <div class="stock-change positive"></div>
+        </div>
+    </div>
+      </div>
+  </main>
+  <section class="app-hero">
+  <div class="app-hero-container">
+    <div class="app-hero-content">
+      <div class="app-hero-text">
+        <h2 class="app-hero-title">Take Your Investments<br> <span class="highlight">Everywhere</span></h2>
+        <p class="app-hero-subtitle">Full market access in your pocket with InvestMate Mobile</p>
+        
+        <div class="app-features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Live Trading</h3>
+            <p>Execute trades in real-time from anywhere</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Advanced Charts</h3>
+            <p>Professional-grade technical analysis</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🔔</div>
+            <h3>Smart Alerts</h3>
+            <p>Custom price notifications</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">💎</div>
+            <h3>Premium Research</h3>
+            <p>Exclusive market insights</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="app-hero-visual">
+        <div class="device-mockup">
+          <div class="device-screen">
+            <!-- Replace with your app screenshot -->
+            <div class="screen-content" style="background: linear-gradient(45deg, #f7931a, #ffab00); display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+              INVESTMATE<br>MOBILE APP
+            </div>
+          </div>
+        </div>
+        
+        <div class="download-cta">
+          <div class="qr-section">
+            <div class="qr-code" style="background: #fff; padding: 10px; border-radius: 12px; width: 140px; height: 140px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+              <span style="color: #f7931a; font-weight: bold; text-align: center;">SCAN TO<br>DOWNLOAD</span>
+            </div>
+          </div>
+          
+          <div class="store-buttons">
+            <a href="#" class="store-btn">
+              <div class="store-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="store-text">
+                <div class="store-subtext">Download on the</div>
+                <div class="store-name">App Store</div>
+              </div>
+            </a>
+            
+            <a href="#" class="store-btn">
+              <div class="store-icon">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                  <path d="M3.2 1.6A1.6 1.6 0 0 0 1.6 3.2v17.6a1.6 1.6 0 0 0 1.6 1.6h17.6a1.6 1.6 0 0 0 1.6-1.6V3.2a1.6 1.6 0 0 0-1.6-1.6H3.2m7.22 2.03c1.57 0 2.86 1.3 2.86 2.85 0 1.56-1.29 2.85-2.85 2.85-1.56 0-2.85-1.29-2.85-2.85 0-1.55 1.28-2.85 2.85-2.85m4.1 13.8v-7.95h2.42v9.38c-1.15.37-2.42.6-3.8.6-.69 0-1.36-.05-2-.15v-1.5c.64.1 1.29.15 2 .15 1.03 0 1.95-.17 2.78-.48v-1.05h-.4c-1.27 0-2.17-.85-2.17-2.17v-.33h3.42v-1.58h-3.42v-1.97h-2.42z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="store-text">
+                <div class="store-subtext">Get it on</div>
+                <div class="store-name">Google Play</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<script src="js/control.js" defer></script>
+<script src="stock.js"></script>
+<script src="markets.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Hamburger menü toggle
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const closeBtn = document.querySelector('.close-menu');
+  const overlay = document.querySelector('.mobile-nav-overlay');
+
+  // Menüyü aç
+  hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Menüyü kapat
+  function closeMobileMenu() {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Tüm dropdown menüleri kapat
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+
+  // Dropdown işlevselliği
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      const parentLi = this.closest('li.dropdown');
+      const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+      
+      // Eğer bu bir dropdown menüsüyse
+      if (dropdownMenu) {
+        // Dropdown zaten açıksa
+        if (dropdownMenu.style.display === 'block') {
+          // "Markets" yazısına tıklandığında markets.html'e git
+          if (this.getAttribute('href') === '#') {
+            window.location.href = 'markets.html';
+          } else {
+            window.location.href = this.href;
+          }
+          return;
+        }
+        
+        // Açık değilse dropdown'ı aç ve sayfaya gitmeyi engelle
+        e.preventDefault();
+        
+        // Diğer tüm dropdown'ları kapat
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== dropdownMenu) menu.style.display = 'none';
+        });
+        
+        // Bu dropdown'ı aç
+        dropdownMenu.style.display = 'block';
+      }
+    });
+  });
+
+  // Dropdown dışına tıklandığında kapat
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    }
+  });
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Oturum kontrolü fonksiyonu
+  function updateAuthUI() {
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+    
+    // Desktop menü güncelleme
+    const authLinks = document.getElementById('authLinks');
+    const portfolioItem = document.getElementById('portfolio-item');
+    const upgradeBtn = document.getElementById('upgradeBtn');
+    const homeLink = document.getElementById('home-link');
+    
+    // Mobil menü güncelleme
+    const authLinksMobile = document.getElementById('authLinksMobile');
+    const portfolioItemMobile = document.getElementById('portfolio-item-mobile');
+    const upgradeBtnMobile = document.querySelector('.mobile-nav .upgrade-btn');
+    const homeLinkMobile = document.querySelector('.mobile-nav .nav-links li:first-child a');
+
+    if (isLoggedIn) {
+      // Desktop menü güncelleme
+      if (authLinks) {
+        authLinks.innerHTML = '<a href="#" id="logoutBtn" class="login">Log out</a>';
+        document.getElementById('logoutBtn').addEventListener('click', function(e) {
+          e.preventDefault();
+          sessionStorage.removeItem('isLoggedIn');
+          window.location.href = 'login.html';
+        });
+      }
+      
+      if (portfolioItem) portfolioItem.style.display = 'block';
+      if (upgradeBtn) upgradeBtn.style.display = 'block';
+      if (homeLink) homeLink.href = 'user.html';
+
+      // Mobil menü güncelleme
+      if (authLinksMobile) {
+        authLinksMobile.innerHTML = '<a href="#" id="logoutBtnMobile" class="login">Log out</a>';
+        document.getElementById('logoutBtnMobile').addEventListener('click', function(e) {
+          e.preventDefault();
+          sessionStorage.removeItem('isLoggedIn');
+          window.location.href = 'login.html';
+        });
+      }
+      
+      if (portfolioItemMobile) portfolioItemMobile.style.display = 'block';
+      if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'block';
+      if (homeLinkMobile) homeLinkMobile.href = 'user.html';
+      
+    } else {
+      // Desktop menü güncelleme
+      if (authLinks) {
+        authLinks.innerHTML = `
+          <a href="login.html" class="login">Log in</a>
+          <a href="signup.html" class="signup">Sign up</a>
+        `;
+      }
+      
+      if (portfolioItem) portfolioItem.style.display = 'none';
+      if (upgradeBtn) upgradeBtn.style.display = 'none';
+      if (homeLink) homeLink.href = 'stock.html';
+
+      // Mobil menü güncelleme
+      if (authLinksMobile) {
+        authLinksMobile.innerHTML = `
+          <a href="login.html" class="login">Log in</a>
+          <a href="signup.html" class="signup">Sign up</a>
+        `;
+      }
+      
+      if (portfolioItemMobile) portfolioItemMobile.style.display = 'none';
+      if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'none';
+      if (homeLinkMobile) homeLinkMobile.href = 'stock.html';
+    }
+  }
+
+  // Sayfa yüklendiğinde UI'ı güncelle
+  updateAuthUI();
+
+  // Hamburger menü toggle
+  const hamburger = document.querySelector('.hamburger-menu');
+  const mobileNav = document.querySelector('.mobile-nav');
+  const closeBtn = document.querySelector('.close-menu');
+  const overlay = document.querySelector('.mobile-nav-overlay');
+
+  // Menüyü aç
+  hamburger.addEventListener('click', function() {
+    mobileNav.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    // Mobil menü açıldığında UI'ı tekrar güncelle (güvenlik için)
+    updateAuthUI();
+  });
+
+  // Menüyü kapat
+  function closeMobileMenu() {
+    mobileNav.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+    // Tüm dropdown menüleri kapat
+    document.querySelectorAll('.dropdown-menu').forEach(menu => {
+      menu.style.display = 'none';
+    });
+  }
+
+  closeBtn.addEventListener('click', closeMobileMenu);
+  overlay.addEventListener('click', closeMobileMenu);
+
+  // Dropdown işlevselliği (hem desktop hem mobil için)
+  const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+  
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function(e) {
+      const parentLi = this.closest('li.dropdown');
+      const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+      
+      if (dropdownMenu) {
+        // Dropdown zaten açıksa
+        if (dropdownMenu.style.display === 'block') {
+          // "Markets" yazısına tıklandığında markets.html'e git (sadece desktop için)
+          if (this.getAttribute('href') === 'markets.html') {
+            window.location.href = 'markets.html';
+          }
+          return;
+        }
+        
+        // Açık değilse dropdown'ı aç ve sayfaya gitmeyi engelle
+        e.preventDefault();
+        
+        // Diğer tüm dropdown'ları kapat
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          if (menu !== dropdownMenu) menu.style.display = 'none';
+        });
+        
+        // Bu dropdown'ı aç
+        dropdownMenu.style.display = 'block';
+      }
+    });
+  });
+
+  // Dropdown dışına tıklandığında kapat
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.dropdown')) {
+      document.querySelectorAll('.dropdown-menu').forEach(menu => {
+        menu.style.display = 'none';
+      });
+    }
+  });
+});
+</script>
+</html>

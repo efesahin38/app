@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>InvestMate</title>
+  <link rel="stylesheet" href="stock.css" />
+</head>
+<body>
+ <header>
+  <div class="navbar">
+    <div class="navbar-top">
+      <div class="logo-container">
+        <img src="logo .png" alt="InvestMate Logo" class="logo-img">
+        <span class="logo-text">InvestMate</span>
+      </div>
+      <button class="hamburger-menu" aria-label="Toggle menu">☰</button>
+    <nav class="desktop-nav">
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="markets.html" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany" data-country="germany">Germany</a></li>
+            <li><a href="countries.html?country=usa" data-country="usa">United States</a></li>
+            <li><a href="countries.html?country=uk" data-country="uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan" data-country="japan">Japan</a></li>
+            <li><a href="countries.html?country=china" data-country="china">China</a></li>
+            <li><a href="countries.html?country=france" data-country="france">France</a></li>
+            <li><a href="countries.html?country=south_korea" data-country="south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india" data-country="india">India</a></li>
+            <li><a href="countries.html?country=brazil" data-country="brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      <div class="auth-links" id="authLinks">
+        <a href="login.html" class="login" id="loginLink">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtn" style="display: none;">
+        Upgrade Now
+      </button>
+    </nav>
+    </div>
+    <div class="mobile-nav-overlay"></div>
+    <nav class="mobile-nav">
+      <button class="close-menu" aria-label="Close menu">×</button>
+      <ul class="nav-links">
+        <li><a href="stock.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">Markets</a>
+          <ul class="dropdown-menu">
+            <li><a href="countries.html?country=germany">Germany</a></li>
+            <li><a href="countries.html?country=usa">United States</a></li>
+            <li><a href="countries.html?country=uk">United Kingdom</a></li>
+            <li><a href="countries.html?country=japan">Japan</a></li>
+            <li><a href="countries.html?country=china">China</a></li>
+            <li><a href="countries.html?country=france">France</a></li>
+            <li><a href="countries.html?country=south_korea">South Korea</a></li>
+            <li><a href="countries.html?country=india">India</a></li>
+            <li><a href="countries.html?country=brazil">Brazil</a></li>
+          </ul>
+        </li>
+        <li id="portfolio-item-mobile" style="display: none;">
+          <a href="portfolio.html">Portfolio</a>
+        </li>
+        <li><a href="news.html">News</a></li>
+      </ul>
+      
+      <div class="auth-links" id="authLinksMobile">
+        <a href="login.html" class="login">Log in</a>
+        <a href="signup.html" class="signup">Sign up</a>
+      </div>
+      <button onclick="window.location.href='upgrade.html'" class="upgrade-btn" id="upgradeBtnMobile" style="display: none;">
+        Upgrade Now
+      </button>
+    </nav>
+  </div>
+</header>
+  <main>
+    <div class="login-container">
+      <h1 class="login-title">InvestMate</h1>
+      <h2 class="login-subtitle">Welcome To InvestMate</h2>
+      
+      <form class="login-form">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        
+        <a href="#" class="forgot-password">Forgot password?</a>
+        
+        <button type="button" class="login-btn">Log in</button>
+      </form>
+      
+      <div class="divider">Or continue with</div>
+      
+      <div class="social-login">
+        <button class="social-btn" id="googleLogin">
+          <img src="google-icon.png" alt="Google" width="20"> Continue with Google
+        </button>
+        <button class="social-btn" id="appleLogin">
+          <img src="apple-logo.png" alt="Apple" width="20"> Continue with Apple
+        </button>
+      </div>
+      
+      <p class="signup-link">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </main>
+
+  <script>
+    // Kullanıcı giriş kontrolü
+    document.querySelector('.login-btn').addEventListener('click', function() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+      
+      // Kayıtlı kullanıcıları al
+      const storedUsers = JSON.parse(localStorage.getItem('users') || '[]');
+      
+      // Sabit kullanıcılar
+      const validUsers = [
+        { email: "user@example.com", password: "password123" },
+        { email: "test@test.com", password: "test123" },
+        ...storedUsers
+      ];
+      
+      if(email && password) {
+        const user = validUsers.find(u => u.email === email && u.password === password);
+        
+        if(user) {
+          sessionStorage.setItem('isLoggedIn', 'true');
+          sessionStorage.setItem('currentUserEmail', email);
+          updateAuthUI();
+          window.location.href = 'user.html';
+        } else {
+          alert("Incorrect email or password!");
+        }
+      } else {
+        alert("Please enter both email and password!");
+      }
+    });
+
+    // Social login butonları
+    document.getElementById('googleLogin').addEventListener('click', function(e) {
+      e.preventDefault();
+      sessionStorage.setItem('isLoggedIn', 'true');
+      updateAuthUI();
+      window.location.href = 'user.html';
+    });
+
+    document.getElementById('appleLogin').addEventListener('click', function(e) {
+      e.preventDefault();
+      sessionStorage.setItem('isLoggedIn', 'true');
+      updateAuthUI();
+      window.location.href = 'user.html';
+    });
+
+    // UI güncelleme fonksiyonu
+    function updateAuthUI() {
+      const isLoggedIn = sessionStorage.getItem('isLoggedIn') === 'true';
+      
+      // Desktop menü
+      const authLinks = document.getElementById('authLinks');
+      const portfolioItem = document.getElementById('portfolio-item');
+      const upgradeBtn = document.getElementById('upgradeBtn');
+      
+      // Mobil menü
+      const authLinksMobile = document.getElementById('authLinksMobile');
+      const portfolioItemMobile = document.getElementById('portfolio-item-mobile');
+      const upgradeBtnMobile = document.getElementById('upgradeBtnMobile');
+
+      if (isLoggedIn) {
+        // Desktop menüyü güncelle
+        if (authLinks) {
+          authLinks.innerHTML = '<a href="#" id="logoutBtn" class="login">Log out</a>';
+          document.getElementById('logoutBtn').addEventListener('click', logoutUser);
+        }
+        if (portfolioItem) portfolioItem.style.display = 'block';
+        if (upgradeBtn) upgradeBtn.style.display = 'block';
+
+        // Mobil menüyü güncelle
+        if (authLinksMobile) {
+          authLinksMobile.innerHTML = '<a href="#" id="logoutBtnMobile" class="login">Log out</a>';
+          document.getElementById('logoutBtnMobile').addEventListener('click', logoutUser);
+        }
+        if (portfolioItemMobile) portfolioItemMobile.style.display = 'block';
+        if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'block';
+      } else {
+        // Desktop menüyü güncelle
+        if (authLinks) {
+          authLinks.innerHTML = `
+            <a href="login.html" class="login">Log in</a>
+            <a href="signup.html" class="signup">Sign up</a>
+          `;
+        }
+        if (portfolioItem) portfolioItem.style.display = 'none';
+        if (upgradeBtn) upgradeBtn.style.display = 'none';
+
+        // Mobil menüyü güncelle
+        if (authLinksMobile) {
+          authLinksMobile.innerHTML = `
+            <a href="login.html" class="login">Log in</a>
+            <a href="signup.html" class="signup">Sign up</a>
+          `;
+        }
+        if (portfolioItemMobile) portfolioItemMobile.style.display = 'none';
+        if (upgradeBtnMobile) upgradeBtnMobile.style.display = 'none';
+      }
+    }
+
+    // Çıkış yapma fonksiyonu
+    function logoutUser(e) {
+      e.preventDefault();
+      sessionStorage.removeItem('isLoggedIn');
+      sessionStorage.removeItem('currentUserEmail');
+      updateAuthUI();
+      window.location.href = 'login.html';
+    }
+
+    // Sayfa yüklendiğinde UI'ı güncelle
+    document.addEventListener('DOMContentLoaded', function() {
+      updateAuthUI();
+      
+      // Hamburger menü toggle
+      const hamburger = document.querySelector('.hamburger-menu');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const closeBtn = document.querySelector('.close-menu');
+      const overlay = document.querySelector('.mobile-nav-overlay');
+
+      // Menüyü aç
+      hamburger.addEventListener('click', function() {
+        mobileNav.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+
+      // Menüyü kapat
+      function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+        // Tüm dropdown menüleri kapat
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+          menu.style.display = 'none';
+        });
+      }
+
+      closeBtn.addEventListener('click', closeMobileMenu);
+      overlay.addEventListener('click', closeMobileMenu);
+
+      // Dropdown işlevselliği
+      const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+      
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          const parentLi = this.closest('li.dropdown');
+          const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+          
+          if (dropdownMenu) {
+            // Dropdown zaten açıksa
+            if (dropdownMenu.style.display === 'block') {
+              // "Markets" yazısına tıklandığında markets.html'e git
+              if (this.getAttribute('href') === '#') {
+                window.location.href = 'markets.html';
+              } else {
+                window.location.href = this.href;
+              }
+              return;
+            }
+            
+            // Açık değilse dropdown'ı aç ve sayfaya gitmeyi engelle
+            e.preventDefault();
+            
+            // Diğer tüm dropdown'ları kapat
+            document.querySelectorAll('.dropdown-menu').forEach(menu => {
+              if (menu !== dropdownMenu) menu.style.display = 'none';
+            });
+            
+            // Bu dropdown'ı aç
+            dropdownMenu.style.display = 'block';
+          }
+        });
+      });
+
+      // Dropdown dışına tıklandığında kapat
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.dropdown')) {
+          document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
